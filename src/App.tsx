@@ -23,6 +23,13 @@ const TargetArea = styled.div`
   justify-content: center;
   align-items: center;
 `;
+const MOCKDATA = [
+  {title: "💰 투자 유치 랭킹", subTitle: "투자금액 순" },
+  {title: "💰 투자 집행 랭킹", subTitle: "투자건수 순" },
+  {title: "🔥 스타트업 랭킹", subTitle: "조회수 순" },
+  {title: "🔥 액셀러레이터 랭킹", subTitle: "조회수 순" },
+  {title: "🔥 벤처캐피탈 랭킹", subTitle: "조회수 순" },
+]
 export default function App() {
   const [target, setTarget] = useState<any>(null);
   const [loading, setLoading] = useState(false);
@@ -56,12 +63,12 @@ export default function App() {
     }
     return () => observer && observer.disconnect();
   },[target]);
-  console.log(data);
+  //console.log(data);
   return (
     <>
       <Header />
       <CardArea>
-        {[1,2,3,4,5].map((_,idx)=><Card key={idx} titles={{title: "💰 투자 유치 랭킹", subTitle: "투자금액 순" }} cardData={cardData} />)}
+        {MOCKDATA.map((curr,idx)=><Card key={idx} titles={curr} cardData={cardData} />)}
       </CardArea>
       <TableArea>
         <Table tableData={data} />

@@ -141,6 +141,9 @@ function Card({ titles, cardData }: ICard) {
       });
     }
   };
+  const imgSrc = (index: number) => {
+    return data.tab==='year' ? `Assets/icons/${index + 1}.jpg` : (data.tab==='month' ? `Assets/icons/m${index + 1}.jpeg`: `Assets/icons/w${index + 1}.jpeg`) 
+  };
   //console.log(data);
   useEffect(() => {}, [data]);
   return (
@@ -167,7 +170,7 @@ function Card({ titles, cardData }: ICard) {
               <p>{idx + 1}</p>
               <div className="company">
                 <div className="image-wrap">
-                  <img src={`Assets/icons/${idx + 1}.jpg`} alt="logo" />
+                  <img src={imgSrc(idx)} alt="logo" />
                 </div>
                 <div className="text-wrap">
                   <p>{curr.name}</p>

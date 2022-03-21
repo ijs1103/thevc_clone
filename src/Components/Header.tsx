@@ -34,7 +34,6 @@ const H1 = styled.h1`
 const Form = styled.form`
   display: flex;
   align-items: center;
-  width: 30vw;
 `;
 const DropDown = styled.div<{ isFocus: boolean }>`
   display: none;
@@ -88,9 +87,9 @@ const DropDown = styled.div<{ isFocus: boolean }>`
   }
 `;
 const InputContainer = styled.div`
-  position: relative;
 `;
 const InputCss = css`
+  width: 300px;
   background-color: #000;
   color: inherit;
   font-size: 16px;
